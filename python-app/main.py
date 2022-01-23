@@ -1,16 +1,16 @@
-import pandas as pd
+import os
+from flask import Flask
 
-print("Hello, remote container.")
+host = os.getenv("HOST", "0.0.0.0")
+port = os.getenv("PORT", "5000")
 
-df = pd.DataFrame(
-    {
-        "Name": [
-            "Braund, Mr. Owen Harris",
-            "Allen, Mr. William Henry",
-            "Bonnell, Miss. Elizabeth",
-        ],
-        "Age": [22, 35, 58],
-        "Sex": ["male", "male", "female"],
-    }
-)
-print(df)
+app = Flask(__name__)
+
+
+@app.route("/")
+def hello():
+    return "Hello, World!"
+
+
+if __name__ == "__main__":
+    app.run(host=host, port=port, debug=True)

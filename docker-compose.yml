@@ -3,6 +3,10 @@ services:
   python-app:
     build:
       context: ./python-app
+    environment:
+      - PORT=5000
+    ports:
+      - 5000:5000
   node-app:
     build:
       context: ./node-app

@@ -10,3 +10,5 @@ services:
   node-app:
     build:
       context: ./node-app
+    environment:
+      - PYTHON_APP_HOST=python-app

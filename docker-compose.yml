@@ -12,3 +12,4 @@ services:
       context: ./node-app
     environment:
       - PYTHON_APP_HOST=python-app
+      - PYTHON_APP_PORT=5000
